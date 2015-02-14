@@ -27,6 +27,14 @@ def getchange(v, c):
         A.append(0)
     return (A, 1)
 
+
+
 #TODO: Write the rest of the algorithm...
+  minCoins = 0
+  def getrecursive(v, k):
+    
+  for x in range(len(v)-1, -1, -1):
+
+
 
 print getchange([1, 3, 5, 7], 7)
