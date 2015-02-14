@@ -1,40 +1,19 @@
 #!/usr/bin/python
 
-'''
-getchange: takes params v and c where:
-  v = list of coin values available for making change. Ex: [1, 5, 10, 50]
-  c = the value for which we will make change
-Returns array A and number min, where:
-  A = list of numbers correlating to coins in v. Ex: [0, 0, 1, 2] means zero
-      pennies and nickels, 1 dime, and 2 half-dollars
-	min = minimum number of coins needed to make change
-'''
-def getchange(v, c):
-  
-  #check if there is a coin of value c
-  found = False
-  for i, j in enumerate(v):
-    if j == c:
-      found = True
-      break;
-  if found:
-    #return proper values
-    A = []
-    for j in range(len(v)):
-      if j == i:
-        A.append(1)
-      else:
-        A.append(0)
-    return (A, 1)
+import changegreedy as greedy
+
+v=[1,5, 10, 25]
+c = 240
+minC = c
 
 
+for k in range(c, 0, -1):
+  coinarray1, coins1 = greedy.getchange(v, k)
+  coinarray2, coins2 = greedy.getchange(v, c-k)
 
-#TODO: Write the rest of the algorithm...
-  minCoins = 0
-  def getrecursive(v, k):
-    
-  for x in range(len(v)-1, -1, -1):
+  if (coins1+coins2) < minC:
+    minC = coins1 + coins2
+    minK = k
+    numC = [coinarray1[x] + coinarray2[x] for x in range(len(v))]
 
-
-
-print getchange([1, 3, 5, 7], 7)
+return (numC, minC)

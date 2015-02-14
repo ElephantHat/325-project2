@@ -27,4 +27,5 @@ def getchange(v, c):
     else:
       i -= 1
 
+
   return (A, min)
