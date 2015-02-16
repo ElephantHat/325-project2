@@ -1,0 +1,28 @@
+1. The array is filled by starting with the base case of 0, then the coins needed to make that change is none.  Then fill the array as the change needed is increased by appending the coin value to the current coins needed according to the following scheme.  Ignore any coins that are larger than the current change value.  Then check that [current minimum minus the current coin value + 1] is greater than the current minimum.  If so, the current minimum change set is now the change set of [current minimum minus the current coin value] plus the current coin.
+
+
+2. Pseudo code for changedp:
+
+for i from 1 to change needed
+	for coin in coin list
+		if coin > i, skip to next coin
+		else
+			if change list or (number of coins needed for (i-coin) +1) > number needed
+				if change list(i-coin) is not null
+					change list(i) = append coin to change list(i-coin)
+
+3. Let T(v) be the minimum number of coins needed to make change for v.  Let V[n] be the nth coin in the coin list.
+
+Base step:
+	When v = 0, T(0) =0.
+	
+Inductive step:
+	Assume T(k) is correct for some positive integer k.  Show that T(k+1) is also correct.  
+	
+	Case 1: T(k+1) = min {T(k-V[i]) + 1} +1 occurs when the addition of exactly 1 coin is needed to make change for k+1. 
+	
+	Case 2: T(k+1) < min {T(k-V[i] + 1} occurs when the addition of a lower value coin in the list would enable a number of lower value coins in change to be exchanged for a higher value coin, thus lowering the minimum number of coins needed.
+	
+	Note, the algorithm does not permit for T(k+1) > min {T(k-V[i] + 1}.
+	
+	Hence, T(k+1) is correct in all possible cases.  Thus, the algorithm is correct.
