@@ -19,7 +19,7 @@ for line in fileinput.input():
   
 for test in inputs:
   
-  '''  <--  remove triple quotes around this block to test changeslow. be sure your A values are small... like <25
+  ''' <--  remove triple quotes around this block to test changeslow. be sure your A values are small... like <25
   
   # Test changeslow
   name = fileinput.filename()[:-4]+ "-change-slow.txt"   #assuming the file input ends with .txt
@@ -33,6 +33,7 @@ for test in inputs:
   f.close()
   
   '''
+
   
   # Test changegreedy
   name = fileinput.filename()[:-4]+ "-change-greedy.txt"   #assuming the file input ends with .txt
