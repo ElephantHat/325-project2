@@ -1,9 +1,9 @@
 # 325-project2
 Run "python changetest.py test.txt"
 
-This will run the test of V = [1, 10, 25, 50] and A = 40 for only the DP and Greedy algorithms. The changeslow algorithm is commented out in changetest.py because it takes so long to run. 
+This will run the test of V = [1, 2, 4, 8] and A = 15 for only the DP and Greedy algorithms. 
 
-The output files will be test-change-dp.txt and test-change-greedy.txt
+The output files will be test-change-slow.txt, test-change-dp.txt, and test-change-greedy.txt
 
 In the output files, we have also included the running time in microseconds to calculate each test. 
 

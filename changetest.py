@@ -19,7 +19,7 @@ for line in fileinput.input():
   
 for test in inputs:
   
-  ''' <--  remove triple quotes around this block to test changeslow. be sure your A values are small... like <25
+  # <--  remove triple quotes around this block to test changeslow. be sure your A values are small... like <25
   
   # Test changeslow
   name = fileinput.filename()[:-4]+ "-change-slow.txt"   #assuming the file input ends with .txt
@@ -32,7 +32,6 @@ for test in inputs:
   f.write(json.dumps(finaltime.microseconds)+" microseconds\n")
   f.close()
   
-  '''
 
   
   # Test changegreedy
